@@ -179,11 +179,11 @@
 		public function filtrarMovil($id_mov){
 			$this->conectar();
 			$datos = array();
-			$sql = "SELECT movil.id_mov, chofer.nom_cho, chofer.app_cho, chofer.apm_cho, chofer.id_cho FROM chofer, movil WHERE (movil.due_mov = chofer.id_cho) and (movil.num_mov = '$id_mov')";
+			$sql = "SELECT movil.id_mov, a.nom_cho, a.app_cho, a.apm_cho, a.id_cho, b.nom_cho, b.app_cho, b.apm_cho, b.id_cho, c.nom_cho, c.app_cho, c.apm_cho, c.id_cho FROM chofer a, chofer b, chofer c, movil WHERE (movil.due_mov = a.id_cho) and (movil.cho_mov = b.id_cho) and (movil.cho_sec_mov = c.id_cho) and (movil.num_mov = '$id_mov')";
 			$ejecutar = $this->mysqli->query($sql);
 			if($rs = $ejecutar->fetch_array(MYSQL_BOTH)){
 				$this->desconectar();
-				echo $rs[1] ."-". $rs[2]."-". $rs[3]."-". $rs[4]."-";		
+				echo $rs[1] ."-". $rs[2]."-". $rs[3]."-". $rs[4]."-". $rs[5] ."-". $rs[6]."-". $rs[7]."-". $rs[8]."-". $rs[9] ."-". $rs[10]."-". $rs[11]."-". $rs[12]."-";		
 			}else{
 				echo 0;
 			}

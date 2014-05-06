@@ -25,15 +25,13 @@ function CargarDatos(){
 						var datos = data.split("-"); 
 					  $("#txtIngDueVal").attr("value",datos[0]+" " + datos[1] + " " + datos[2] );
 					  $("#txtIngPorDueVal").attr("value",datos[3]);
+					  $("#cboIngChoVal").html("<option value="+datos[7]+">"+datos[4]+" " +datos[5]+" " +datos[6]+"</option><option value="+datos[11]+">"+datos[8]+" " +datos[9]+ " " +datos[10]+"</option>");
 					}
 				 					
 	  	  	  }
-			  /*Tomar datos entregados y buscar posibles choferes asociados a ese dueño*/
-			  var id_mov = $('#txtIngMovVal').val();
-			  
-			  
 	  	  });	  
 }
+
 $(function(){	
 	$('#txtIngChoVal').autocomplete({
 		source : '../../ajax/chofer_vale_ajax.php',

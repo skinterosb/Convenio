@@ -31,11 +31,8 @@ class reporte{
 			echo "<th>Fecha Vale</th>";
 			echo "<th>Chofer</th>";
 			echo "<th>Dueño</th>";
-			echo "<th>Total Chofer</th>";
-			echo "<th>Total Dueño</th>";
-			echo "<th>Total Ganancia</th>";
 		echo "</tr>";
-		$sql = "SELECT vale.num_val, vale.fec_ing, vale.fec_val ,b.nom_cho as 'dueno',a.nom_cho as 'chofer' ,vale.tot_cho_val, vale.tot_mov_val, vale.tot_gan_val
+		$sql = "SELECT vale.num_val, vale.fec_ing, vale.fec_val ,b.nom_cho as 'dueno',a.nom_cho as 'chofer'
 FROM vale, chofer b, chofer a
 WHERE a.id_cho = vale.cho_val
 AND b.id_cho = vale.due_val";
@@ -46,11 +43,7 @@ AND b.id_cho = vale.due_val";
 			echo "<td>".$rs[1]."</td>";
 			echo "<td>".$rs[2]."</td>";
 			echo "<td>".$rs[3]."</td>";
-			echo "<td>".$rs[4]."</td>";
-			echo "<td>".$rs[5]."</td>";
-			echo "<td>".$rs[6]."</td>";
-			echo "<td>".$rs[7]."</td>";
-			
+			echo "<td>".$rs[4]."</td>";		
 		echo "</tr>";			
 		}
 		$this->desconectar();

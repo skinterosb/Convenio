@@ -3,9 +3,8 @@
 <?php
 require("../../Clases/reportes.php");
 $bd = new reporte("127.0.0.1","root","","convenio");
-$cant_vale = $bd->calculos("SELECT count(tot_mov_val) FROM vale");
-$total_movil = $bd->calculos("SELECT sum(tot_mov_val) FROM vale");
-$total_ganancia = $bd->calculos("SELECT sum(tot_gan_val) FROM vale");
+$cant_vale = $bd->calculos("SELECT count(id_val) FROM vale");
+$total_bruto = $bd->calculos("SELECT sum(val_bru_val) FROM vale");
 ?>
 <head>
 <style>
@@ -94,8 +93,7 @@ $total_ganancia = $bd->calculos("SELECT sum(tot_gan_val) FROM vale");
 				$bd->listarVales();	
 			?>
             <label>Vales Ingresados</label><input type="text" value="<?php echo $cant_vale?>" class="totales"	readonly="readonly"	name="cant_val_mes" />
-            <label>Total Movil</label><input type="text" value="<?php echo $total_movil?>" class="totales"	readonly="readonly"	name="total_movil_mes" />	
-            <label>Total Utilidad Empresa</label><input type="text" value="<?php echo $total_ganancia?>" class="totales"	readonly="readonly"	name="total_ganancia_mes" />
+            <label>Total Movil</label><input type="text" value="<?php echo $total_bruto?>" class="totales"	readonly="readonly"	name="total_movil_mes" />	
 		</div>
       	
         		<div class="claseInferiorMantenedores">

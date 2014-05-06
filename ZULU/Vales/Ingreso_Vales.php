@@ -11,7 +11,7 @@
 		$fec_ing = date('o/m/d');
 		$fec_val = $_REQUEST["txtIngFecVal"];
 		$mov_val = $_REQUEST["txtIngMovVal"];
-		$cho_val = $_REQUEST["txtIngPorChoVal"];
+		$cho_val = $_REQUEST["cboIngChoVal"];
 		$due_val = $_REQUEST["txtIngPorDueVal"];
 		$num_val = $_REQUEST["txtIngTicVal"];
 		$zul_val = $_REQUEST["txtIngZulVal"];
@@ -119,19 +119,15 @@
                                 </section>
                                 
                                 		<label id="lblIngPorDueVal">Porcentaje</label>
-                                        <input type="text" name="txtIngPorDueVal" id="txtIngPorDueVal"  />
+                                        <input type="hidden" name="txtIngPorDueVal" id="txtIngPorDueVal"  />
                                 </section>                         
                             </div>
                             <div id="5" class="claseblock" >
-                            <section>
-                            	<label id="lblIngChoVal">Chofer</label>
-                                <input type="text" name="txtIngChoVal" id="txtIngChoVal" />
-                                
-                                </section>
-                                <section>
-                                		<label id="lblIngPorChoVal">Porcentaje</label>
-                                        <input type="text" name="txtIngPorChoVal" id="txtIngPorChoVal"  />
-                                </section>
+                            	<section>
+                            		<select id="cboIngChoVal" name="cboIngChoVal">
+                                    
+                                    </select>
+                            	</section>
                             </div>
                             <div id="6" class="claseblock">
                            		 <label id="lblIngZulVal">ZULU</label>
